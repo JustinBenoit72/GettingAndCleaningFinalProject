@@ -28,8 +28,8 @@ run_analysis <- function(){
     
     #Find column names with "mean" or "std" in the name to get mean and standard deviation data
     #Due to duplicate column names, the "select" function from dplyr cannot be used
-    mean_cols <- grep("mean", colnames(total_data))
-    std_cols <- grep("std", colnames(total_data))
+    mean_cols <- grep("mean\\(\\)", colnames(total_data))
+    std_cols <- grep("std\\(\\)", colnames(total_data))
     
     #Get columns 1 and 2 (subject and activity) and all those found with grep above
     filtered_data <- total_data[,c(1, 2, mean_cols, std_cols)]
