@@ -26,7 +26,7 @@ run_analysis <- function(){
     #Set the column names with the list of features to make descriptive column variable names
     colnames(total_data) <- c("Subject", "Activity", features[,2])
     
-    #Find column names with "mean" or "std" in the name to get mean and standard deviation data
+    #Find column names with "mean()" or "std()" in the name to get mean and standard deviation data
     #Due to duplicate column names, the "select" function from dplyr cannot be used
     mean_cols <- grep("mean\\(\\)", colnames(total_data))
     std_cols <- grep("std\\(\\)", colnames(total_data))
